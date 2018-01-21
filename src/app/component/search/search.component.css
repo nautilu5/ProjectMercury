@@ -1,0 +1,30 @@
+#result-container {
+    background-color: #cccccc;
+    display: flex;
+    
+
+}
+
+#result-box {
+background-color: white;
+display: flex;
+
+}
+#img {
+    border: 5px black double;
+    margin: 10px;
+}
+
+#test-img{
+    height: 60px;
+    width: 120px;
+}
+
+#item-info{
+    border: 2px black solid;
+    margin: 10px;
+}
+#test-info{
+    height: 30px;
+    width: 550px;
+}
