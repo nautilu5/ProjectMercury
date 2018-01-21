@@ -1,16 +1,21 @@
 {
     "compilerOptions": {
         "target": "es6",
-        "module": "commonjs",
+        "module": "es2015",
         "moduleResolution": "node",
         "sourceMap": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "lib": ["es5", "es6", "dom"],
+        "lib": ["es2015", "dom"],
         "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": true,
         "types": ["node"],
         "typeRoots": ["./node_modules/@types"]
     },
-    "exclude": ["node_modules", "src/main.aot.ts", "aot", "**.spec.ts"]
+    "files": ["src/app/app.module.ts", "src/main.aot.ts", "**.spec.ts"],
+    "angularCompilerOptions": {
+        "genDir": "aot",
+        "skipMetadataEmit": true,
+        "entryModule": "./src/app/app.module#AppModule"
+    }
 }
