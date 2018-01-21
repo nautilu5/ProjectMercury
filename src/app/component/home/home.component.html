@@ -1,0 +1,20 @@
+<div id= "logoflex">
+  <p>logo</p>
+</div>
+
+<form [formGroup] = 'homeForm' novalidate >
+  <div id = "searchbarflex">
+    <input class = "bar" placeholder = "Search for an item!" formControlName = 'searchForm'>
+  </div>
+
+  <div id = "buttonsflex">
+    <button class = "home-button" type="submit">search</button>
+    <button class = "home-button">about</button>
+  </div>
+
+  <div id = "results-flex">
+    <app-search></app-search>
+  </div>
+</form>
+<p>Form value: {{ homeForm.value | json }}</p>
+<p>Form status: {{ homeForm.status | json }}</p>
