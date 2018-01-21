@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 });
 
 var connection = mysql.createConnection({
-    host: '35.22.100.222',
+    host: '35.22.40.34',
     user: 'root',
     password: 'comparison18x',
     database: 'spartahack',
