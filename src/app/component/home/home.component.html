@@ -1,17 +1,21 @@
 <div id= "logoflex">
-  <img src="https://vectr.com/samuelgendelman/bddvC2Ap.svg?width=400&height=400&select=bddvC2Appage0">
+  <img src="https://vectr.com/samuelgendelman/bddvC2Ap.svg?width=320&height=320&select=bddvC2Appage0">
 </div>
-<p [@buttonAnimation] = 'state' (click) = "animateMe()">hello</p>
 
-<form [formGroup] = 'homeForm' novalidate >
+<form [formGroup] = 'homeForm' >
+  
   <div id = "searchbarflex">
     <input class = "bar" placeholder = "Search for an item!" formControlName = 'searchForm'>
   </div>
 
   
-  <div id = "buttonsflex">
-    <button class = "home-button" >search</button>
-    <button class = "home-button">about</button>
+  <div id = "buttonsflex" > 
+    <button class = "home-button" *ngFor = "let text of texts" 
+    [@hoverAnimation] = 'text.state' (mouseenter) = 'text.switchState()' (mouseleave) = "text.switchState()">
+
+    {{ text.name }} 
+
+    </button>
   </div>
 
   <div id = "results-flex">
