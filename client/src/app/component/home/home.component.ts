@@ -2,7 +2,8 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { SearchComponent } from '../search/search.component'
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms'
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations'
-import { HomeText, BUTTON_TEXT } from './home'
+import { HomeText, BUTTON_TEXT } from './home';
+import { SearchService } from '../../services/search.service';
 
 @Component({
  
@@ -55,21 +56,39 @@ export class HomeComponent implements OnInit {
   homeForm:FormGroup;
     searchForm: FormGroup;
     
-  constructor(private fb: FormBuilder) {
+ 
+ 
+  constructor(
+    private fb: FormBuilder,
+    private searchService: SearchService
+  ) {
+
     this.createForm();
+
     console.log(this.texts)
+
    }
   
   createForm() {
+
     this.homeForm = this.fb.group ({
+
       searchForm: ''
     })
-  } 
-  state:string = 'inactive'
-  
-  switch() {
-    this.state === 'inactive' ? 'active' : 'inactive'
   }
+  
+  onSearchSubmit() { //creates an api call for seearch data
+    
+    const search = {
+      search: this.homeForm.get('searchForm').value
+    }
+
+    this.searchService.searchRequest(search).subscribe(data => {
+      console.log(data)
+    })
+  }
+   
+
 
   texts = BUTTON_TEXT
 
@@ -78,5 +97,5 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
+

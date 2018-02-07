@@ -2,7 +2,7 @@
   <img src="https://vectr.com/samuelgendelman/bddvC2Ap.svg?width=320&height=320&select=bddvC2Appage0">
 </div>
 
-<form [formGroup] = 'homeForm' >
+<form [formGroup] = 'homeForm' (submit) = "onSearchSubmit()">
   
   <div id = "searchbarflex">
     <input class = "bar" placeholder = "Search for an item!" formControlName = 'searchForm'>
