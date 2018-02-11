@@ -6,7 +6,8 @@ import { HomeText, BUTTON_TEXT } from './home';
 import { SearchService } from '../../services/search.service';
 
 @Component({
- 
+  
+  moduleId: module.id,
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],

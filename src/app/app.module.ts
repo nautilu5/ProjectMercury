@@ -35,14 +35,25 @@ const appRoutes: Routes = [
     ShoppingListComponent,
     FilterComponent
   ],
+
   imports: [ 
+    HttpModule,
     HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
     BrowserModule,
     ReactiveFormsModule
   ],
-  providers: [AppComponent, SearchService, HttpClient],
+
+  providers: [
+    
+    AppComponent, 
+    SearchService, 
+    HttpClient
+        
+  ],
+
+  bootstrap: [ AppComponent ]
   
 })
 
