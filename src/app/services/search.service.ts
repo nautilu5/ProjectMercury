@@ -16,8 +16,8 @@ export class SearchService {
 
   ) { }
 
-  searchRequest(search: any) { //search request function
-    return this.http.post(this.domain + '/request/search', search).map(res => res.json) //sends a request to the back end. Goes to the file and than router module.
+  searchRequest(search: any) { //search request function. Asks the backend for a result from search
+    return this.http.post(this.domain + '/searchrequest/search', search).map(res => res.json) //sends a request to the back end. Goes to the file and than router module.
   }                                                                                     //response is mapped to a res.json    
 }
   

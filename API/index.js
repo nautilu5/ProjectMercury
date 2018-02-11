@@ -2,20 +2,20 @@ const express = require('express')
 const app = express();
 const router = express.Router();
 
-const config = require('./config/database');
+const config = require('./config/database');//connects to database port
 const path = require('path');
 const searchresults = require('./routes/searchresults')(router);
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const bcrypt = require('bcryptjs');
 
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-
-require('mongoose=double')(mongoose);
 
 mongoose.connect(
     
     config.uri,
+
     { useMongoClient: true },
     
     (err) => {
@@ -39,7 +39,7 @@ app.use(cors({
 }))
 
 //middleware (this needs to be used before the routes)
-app.use(bodyParser.urelencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 //creates a static directory of search results(aka from the router)

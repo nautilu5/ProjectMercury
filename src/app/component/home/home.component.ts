@@ -10,6 +10,7 @@ import { SearchService } from '../../services/search.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  providers: [SearchService],
   animations: [
     
     trigger('hoverAnimation', [
@@ -83,8 +84,8 @@ export class HomeComponent implements OnInit {
       search: this.homeForm.get('searchForm').value
     }
 
-    this.searchService.searchRequest(search).subscribe(data => {
-      console.log(data)
+    this.searchService.searchRequest(search).subscribe(result => {
+      console.log(result)
     })
   }
    

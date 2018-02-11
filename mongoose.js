@@ -17,7 +17,7 @@ mongoose.connection.once('open', () => {
         price: SchemaTypes.Double,
         numreviews: SchemaTypes.Double,
         avgreviews: SchemaTypes.Double,
-        address: {
+        address: { 
             
             street: String,
             zipcode: Number,
