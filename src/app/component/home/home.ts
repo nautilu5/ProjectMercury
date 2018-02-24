@@ -1,8 +1,9 @@
 export class HomeText {
       constructor(   
-        public name:string,  
+        public name:any,  
         public state = 'small',
-        public clickState = 'inactive'
+        public clickState = 'inactive',
+        public type:any
     ){}
     
     switchState()  {
@@ -16,6 +17,10 @@ export class HomeText {
 }
 
 export var BUTTON_TEXT = [
-    'Search',
-    'About'
-].map(text => new HomeText(text)) 
+
+ new HomeText('Search','inactive','inactive','submit' ),
+ new HomeText('About','inactive','inactive','')
+
+]
+
+ 

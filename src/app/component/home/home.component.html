@@ -11,7 +11,7 @@
   
   <div id = "buttonsflex" > 
     <button class = "home-button" *ngFor = "let text of texts" 
-    [@hoverAnimation] = 'text.state' (mouseenter) = 'text.switchState()' (mouseleave) = "text.switchState()">
+    [@hoverAnimation] = 'text.state' (mouseenter) = 'text.switchState()' (mouseleave) = "text.switchState()" type = '{{ text.type }}'>
 
     {{ text.name }} 
 
