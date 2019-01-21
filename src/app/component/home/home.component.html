@@ -1,0 +1,26 @@
+<div id= "logoflex">
+  <img src="https://vectr.com/samuelgendelman/bddvC2Ap.svg?width=320&height=320&select=bddvC2Appage0">
+</div>
+
+<form [formGroup] = 'homeForm' (submit) = "onSearchSubmit()">
+  
+  <div id = "searchbarflex">
+    <input class = "bar" placeholder = "Search for an item!" formControlName = 'searchForm'>
+  </div>
+
+  
+  <div id = "buttonsflex" > 
+    <button class = "home-button" *ngFor = "let text of texts" 
+    [@hoverAnimation] = 'text.state' (mouseenter) = 'text.switchState()' (mouseleave) = "text.switchState()" type = '{{ text.type }}'>
+
+    {{ text.name }} 
+
+    </button>
+  </div>
+
+  <div id = "results-flex">
+    <app-search></app-search>
+  </div>
+</form>
+<p>Form value: {{ homeForm.value | json }}</p>
+<p>Form status: {{ homeForm.status | json }}</p>

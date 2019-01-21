@@ -1,0 +1,33 @@
+#result-container {
+    
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+#result-box {
+background-color: #cccccc;
+display: flex;
+
+}
+#img {
+    border: 5px black double;
+    margin: 10px;
+    background-color: #cccccc;
+}
+
+#test-img{
+    height: 60px;
+    width: 120px;
+}
+
+#item-info{
+    border: 2px black solid;
+    margin: 10px;
+    background-color: #cccccc;
+}
+#test-info{
+    height: 30px;
+    width: 1000px;
+}

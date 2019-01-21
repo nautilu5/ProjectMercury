@@ -1,0 +1,36 @@
+#logoflex{
+
+    display:flex;
+    justify-content: center;
+}
+#searchbarflex{
+
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.bar{
+width: 75%;
+height: 30px;
+}
+
+#buttonsflex {
+display: flex;
+justify-content: space-around;
+margin-top: 90px;
+}
+.home-button {
+
+    height: 65px;
+    width: 90px;
+    color: white;
+    background-color: blue;
+    font-size: 24px;
+    font:inherit;
+}
+#results-flex {
+    display: flex;
+    flex-direction: column; 
+}
